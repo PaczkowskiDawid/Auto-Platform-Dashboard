@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost"; // Serverul MySQL, de obicei 'localhost' pe Bluehost
-$username = "brqzqcmy_dawid"; // Numele de utilizator MySQL
-$password = "ADawidE2003@"; // Parola MySQL
-$dbname = "brqzqcmy_cars"; // Numele bazei de date
+$username = ""; // Numele de utilizator MySQL
+$password = ""; // Parola MySQL
+$dbname = ""; // Numele bazei de date
 
 // Crează conexiunea
 $conn = mysqli_connect($servername, $username, $password, $dbname);
