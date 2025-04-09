@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost"; // Serverul MySQL, de obicei 'localhost' pe Bluehost
-$username = "brqzqcmy_dawid"; // Numele de utilizator MySQL pe care l-ai configurat (de exemplu, 'brqzqcmy_WPT7T')
-$password = "ADawidE2003@"; // Parola pentru utilizatorul respectiv
-$dbname = "brqzqcmy_cars"; // Numele bazei de date pe care ai creat-o, adică 'brqzqcmy_cars'
+$username = ""; // Numele de utilizator MySQL pe care l-ai configurat (de exemplu, 'brqzqcmy_WPT7T')
+$password = ""; // Parola pentru utilizatorul respectiv
+$dbname = ""; // Numele bazei de date pe care ai creat-o, adică 'brqzqcmy_cars'
 ?>
 
 
