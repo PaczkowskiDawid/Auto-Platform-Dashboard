@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactează SSA Automobile pentru informații despre mașini second hand, oferte speciale sau asistență. Suntem aici pentru a te ajuta să găsești vehiculul ideal!">
+    <title>SSA Automobile - Contact</title>
+    <link rel="icon" href="favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylescontact.css
+    ">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #343a40 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+            font-weight: bold;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-image.jpg') center/cover no-repeat;
+            padding: 100px 0;
+        }
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+        .car-card img {
+            width: 100%;
+            height: auto;
+        }
+        #harta {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.map-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.map-container h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.map-container p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.map-container a {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+/* Stil pentru butonul principal */
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e7222e; /* Culoarea aleasă */
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: scale(1.1); /* Mărim butonul la hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Efect de umbră la hover */
+}
+
+/* Stil pentru opțiunile care vor apărea */
+.contact-options {
+    display: none; /* Ascunde opțiunile inițial */
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efect de umbră subtile */
+    border-radius: 8px;
+    padding: 10px;
+    width: 220px;
+    z-index: 999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px); /* Împinge opțiunile în sus la început */
+}
+
+.contact-options.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Permite opțiunilor să se miște în sus */
+}
+
+/* Stil pentru fiecare opțiune */
+.option-button {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #e7222e; /* Culoare similară cu butonul principal */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+}
+
+.option-button:hover {
+    background-color: #d61d2c; /* Culoare mai închisă la hover */
+}
+
+.option-button:active {
+    transform: scale(0.98); /* Micșorează butonul la apăsare */
+}
+
+/* Efect pentru animarea butonului principal și opțiunilor */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.contact-button {
+    animation: bounce 2s infinite; /* Animatie care face butonul să sară */
+}
+
+
+/* Media Query pentru telefoane */
+@media screen and (max-width: 768px) {
+    /* Scade dimensiunea butonului pe telefoane */
+    .contact-button {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    /* Scade lățimea opțiunilor */
+    .contact-options {
+        width: 180px;
+    }
+
+    /* Ajustează dimensiunea butoanelor din opțiuni */
+    .option-button {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+/* Media Query pentru ecrane foarte mici (ex. telefoane foarte mici) */
+@media screen and (max-width: 480px) {
+    .contact-button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .contact-options {
+        width: 160px;
+    }
+
+    .option-button {
+        font-size: 12px;
+        padding: 6px;
+    }
+}
+
+/* Stil pentru containerul hărții */
+.map-container {
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsivitate pentru harta pe ecrane mai mici */
+@media screen and (max-width: 768px) {
+    /* Ajustează iframe-ul pentru a fi 100% din lățimea containerului pe dispozitivele mai mici */
+    .map-container iframe {
+        width: 100%;
+        height: 300px; /* Dimensiune mai mică pentru mobil */
+    }
+}
+
+/* Media query pentru ecrane foarte mici (ex. telefoane foarte mici) */
+@media screen and (max-width: 480px) {
+    .map-container iframe {
+        height: 250px; /* Împinge și mai mult dimensiunea iframe-ului pe dispozitive mici */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">
+                <img src="logo.png" alt="Logo" style="max-height: 60px;">
+            </a>
+                       
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">Acasă</a></li>
+                    <li class="nav-item"><a class="nav-link" href="desprenoi.html">Despre noi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard/masini.php">Mașini de vânzare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="finantare.php">Finanțare</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container2">
+        <!-- Titlu și descriere -->
+        <div class="contact-header">
+            <h1>Contactează-ne</h1>
+            <p>
+                Scopul nostru este să vă oferim un tur interactiv al inventarului nostru nou și folosit, 
+                precum și să vă oferim în mod convenabil o mașină, să programați o vizualizare și o comandă 
+                sau a unui serviciu sau să solicitați finanțare.
+            </p>
+        </div>
+    
+        <!-- Secțiunea cu date de contact și logo -->
+        <div class="contact-content">
+            <!-- Informații de contact -->
+            <div class="contact-info">
+                <h2>Date de contact</h2>
+                <p><strong>📍 Adresa:</strong> DN1A 194, Ploiesti, Romania</p>
+                <p><strong>📞 Telefon:</strong><a href="tel:+40743016677">+40 743 016 677</a> </p>
+                <p><strong>✉️ Email:</strong> <a href="mailto:ssa.automobile.prahova@gmail.com">ssa.automobile.prahova@gmail.com</a></p>
+                <p><strong>⏳ Program:</strong> Luni - Vineri: 9:00 - 18:00</p>
+            </div>
+    
+            <!-- Logo încadrat -->
+            <div class="contact-logo">
+                <img src="logo.png" alt="Logo SSA Auto">
+            </div>
+        </div>
+    </div>
+
+    <section id="harta">
+        <div class="map-container">
+            <h2>Locația noastră</h2>
+            <p>Click pe link-ul de mai jos pentru a vizualiza locația noastră pe Google Maps:</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2823.181630710057!2d26.043955!3d44.960302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDTCsDU3JzM3LjEiTiAyNsKwMDInMzguMiJF!5e0!3m2!1sro!2sro!4v1742552293955!5m2!1sro!2sro" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+             
+            </a>
+        </div>
+    </section>
+    
+
+
+    <div id="contact-button" class="contact-button">
+        <span>Contact</span>
+    </div>
+    
+    <div id="contact-options" class="contact-options">
+        <a href="tel:+40743016677" class="option-button">Apel Telefonic</a>
+        <a href="https://wa.me/40739550551?text=Salut!%20Mă%20interesează%20mai%20multe%20informații%20despre%20mașinile%20disponibile.%20Aș%20dori%20să%20aflu%20detalii%20adționale." class="option-button">WhatsApp</a>
+        <a href="finantare.php" class="option-button">Rate Online</a>
+
+    </div>
+    
+    
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Coloana 1: Contact -->
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p><strong></strong> <a href="tel:+40743016677">📞+40 743 016 677</a></p>
+                <p><strong></strong> <a href="tel:+40739550551">📞+40 739 550 551</a></p>
+                <p><strong>📧Email:</strong> <a href="mailto:ssa.automobile.prahova@gmail.com">ssa.automobile.prahova@gmail.com</a></p>
+                <p><strong>Locație:</strong> DN1A 194, Ploiesti, Romania</p>
+                <a href="https://maps.app.goo.gl/EzRFX6MzpRjbM7TN7" target="_blank">Vezi pe Google Maps</a>
+            </div>
+    
+            <!-- Coloana 2: Informații firmă -->
+            <div class="footer-col">
+                <h3>Informații</h3>
+                <p>SSA AUTO AUTOMOBILE S.R.L</a></p>
+                <p >CUI:RO44847873</a></p>
+                <p id="gri"><a href="https://anpc.ro">A.N.P.C</a></p>
+            </div>
+    
+            <div class="footer-col">
+                <h3>Urmărește-ne</h3>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/share/1B6CWyu6Sa/?mibextid=wwXIfr" target="_blank">
+                        <i class="fab fa-facebook-square"></i> <!-- Icona pentru Facebook -->
+                    </a>
+                    <a href="https://www.instagram.com/ssa.automobile?igsh=MXR6aXhwMWFyOXpibQ%3D%3D&utm_source=qr" target="_blank">
+                        <i class="fab fa-instagram"></i> <!-- Icona pentru Instagram -->
+                    </a>
+                    <a href="https://www.tiktok.com/@ssa.automobile?_t=ZN-8ucK9QCQBfC&_r=1" target="_blank">
+                        <i class="fab fa-tiktok"></i> <!-- Icona pentru TikTok -->
+                    </a>
+                </div>
+                <div class="footer-images">
+                    <a href="https://reclamatiisal.anpc.ro" target="_blank" id="anpc">
+                        <img src="anpc.png" alt="Image 1" class="footer-img">
+                    </a>
+                    <a href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage" target="_blank">
+                        <img src="sol.jpg" alt="Image 2" class="footer-img">
+                    </a>
+                </div>
+        </div>
+    </footer>
+ 
+
+    <script>
+        document.getElementById("contact-button").addEventListener("click", function() {
+            var contactOptions = document.getElementById("contact-options");
+    
+            // Toggle (arată sau ascunde) opțiunile de contact
+            contactOptions.classList.toggle("show");
+        });
+    </script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,830 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Personalizare navbar */
+nav.navbar {
+background-color: #333; /* Fundal închis */
+padding: 0px 20px; /* Eliminăm aproape tot padding-ul din sus/jos */
+}
+
+.navbar-brand img {
+max-height: 30px; /* Micșorăm și mai mult înălțimea imaginii */
+width: auto; /* Lățimea se ajustează automat pentru a păstra proporțiile */
+}
+.navbar-nav {
+margin-left: auto;
+margin-right: auto;
+}
+
+.nav-item {
+margin-left: 30px; /* Mărim spațiul între link-uri */
+margin-right: 30px; /* Mărim spațiul între link-uri */
+}
+
+.nav-link {
+color: #fff !important; /* Textul să fie alb */
+font-size: 16px; /* Mărim fontul pentru a fi mai vizibil */
+text-transform: uppercase; /* Textul devine litere mari */
+position: relative; /* Necesitar pentru a plasa sublinierea */
+transition: color 0.3s ease; /* Tranziție lină pentru culoare */
+}
+
+/* Efectul de subliniere */
+.nav-link::after {
+content: ''; /* Creăm o linie după fiecare link */
+position: absolute;
+left: 0;
+bottom: -5px; /* Poziționăm sublinierea puțin sub text */
+width: 0%;
+height: 2px;
+background-color: #e7222e; /* Culoarea sublinierii */
+transition: width 0.3s ease; /* Tranziție lină pentru lățimea sublinierii */
+}
+
+/* La hover, sublinierea se întinde de la stânga la dreapta */
+.nav-link:hover::after {
+width: 100%; /* Lățimea sublinierii va ajunge la 100% */
+}
+
+
+
+/* Pe mobil, navbar-ul să fie mai compact */
+@media (max-width: 767px) {
+nav.navbar {
+padding: 10px 20px; /* Micșorăm padding-ul pe dispozitive mobile */
+}
+.nav-item {
+margin-left: 15px; /* Micșorăm spațiul între link-uri pe mobil */
+margin-right: 15px;
+}
+}
+
+
+
+
+
+
+
+
+
+/* Stiluri generale pentru footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px;
+    text-align: center; /* Aliniere centru pentru tot textul */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite flexul să se încarce pe mai multe linii pe dispozitive mici */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    padding: 10px;
+    min-width: 250px;
+    text-align: center; /* Aliniere centru a textului */
+    margin: 10px 0;
+}
+
+.footer-col h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #e7222e;
+}
+
+.footer-col p,
+.footer-col a {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #e7222e;
+}
+
+/* Stiluri pentru imaginile footer */
+.footer-img {
+    width: 100px; /* Setăm o dimensiune uniformă pentru ambele imagini */
+    height: 100px; /* Setăm o înălțime uniformă pentru ambele imagini */
+    object-fit: contain; /* Asigurăm că imaginea se va potrivi în aceste dimensiuni fără a fi distorsionată */
+    border-radius: 5px;
+}
+
+.footer-img {
+    width: 150px; /* Dimensiune uniformă pentru imagini */
+    height: 100px; /* Dimensiune uniformă pentru imagini */
+    object-fit: contain; /* Asigură că imaginea se potrivește fără a fi distorsionată */
+    border-radius: 5px; /* Colțuri rotunjite */
+    margin-top: -40px;
+    margin-bottom: 10px; /* Adaugă un spațiu între imagini */
+}
+.footer-images {
+    display: flex;
+    flex-direction: column; /* Aranjează imaginile pe verticală */
+    align-items: center; /* Centrează imaginile pe axa orizontală */
+}
+
+.footer-images a {
+    display: inline-block;
+}
+
+/* Responsivitate pentru mobil */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+    }
+
+    .footer-img {
+        width: 50%; /* Ajustăm dimensiunea imaginilor pe mobil */
+        margin-bottom: 10px;
+    }
+}
+/* Stiluri pentru social media */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-media a {
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media i:hover {
+    color: #e7222e;
+}
+.car-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+/* Caruselul principal */
+.car-carousel {
+    width: 100%;            /* Caruselul să ocupe 100% din lățimea disponibilă */
+    max-width: 700px;       /* Lățime maximă pentru carusel */
+    height: 500px;          /* Înălțime fixă pentru carusel */
+    overflow: hidden;       /* Ascunde orice parte din imagine care iese din carusel */
+    position: relative;     /* Necesită pentru a poziționa corect imaginile */
+    border-radius: 15px;    /* Colțuri rotunjite pentru carusel */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  /* Umbră subtilă pentru efect de adâncire */
+    margin: 0 auto;         /* Centrează caruselul pe pagină */
+    background-color: #fff; /* Fundal alb pentru carusel */
+    padding-left: 20px;     /* Spațiu pe partea stângă */
+    padding-right: 20px;    /* Spațiu pe partea dreaptă */
+    margin-bottom: 20px;    /* Adăugăm spațiu între carusel și cartonaș */
+    
+}
+
+/* Imaginile din caruselul principal */
+.car-carousel img {
+    width: 100%;            /* Lățimea imaginii se va adapta la container */
+    height: 100%;           /* Înălțimea imaginii se va adapta la container */
+    object-fit: cover;      /* Asigură că imaginea umple complet caruselul, păstrând proporțiile */
+    display: block;         /* Previne orice spațiu suplimentar sub imagine */
+    border-radius: 15px;    /* Colțuri rotunjite pentru imagini */
+}
+
+/* Paginile caruselului */
+.carousel-indicators li {
+    background-color: #aaa;  /* Culoare gri pentru indicatorii caruselului */
+}
+
+.carousel-indicators .active {
+    background-color: #333;  /* Culoare mai închisă pentru indicatorul activ */
+}
+
+/* Navigație carusel */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #333;  /* Culoare pentru săgețile de navigare */
+    border-radius: 50%;       /* Colțuri rotunjite pentru săgeți */
+    padding: 10px;            /* Margine pentru săgeți */
+}
+
+/* Detaliile mașinii */
+.car-details {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 30px;
+    
+    padding-left: 20px;     /* Spațiu pe partea stângă */
+    padding-right: 20px;    /* Spațiu pe partea dreaptă */
+}
+
+/* Prețul */
+.price {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e94e77;          /* Culoare de accent pentru preț */
+}
+
+/* Secțiunea cu informații */
+.info-section {
+    margin-top: 30px;
+    
+}
+
+.contact-buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #e94e77; /* Culoare de accent */
+    color: white;
+    border-radius: 25px;       /* Colțuri rotunjite pentru butoane */
+    text-decoration: none;     /* Fără subliniere pe link */
+    transition: background-color 0.3s ease;
+}
+
+.contact-buttons a:hover {
+    background-color: #d13b5c; /* Culoare mai închisă la hover */
+}
+
+/* Caruselul cu miniaturi */
+.thumbnail-carousel {
+    margin-top: 20px;         /* Spațiu între caruselul principal și miniaturi */
+    margin-bottom: 20px;      /* Spațiu de jos pentru miniaturi */
+}
+
+/* Miniaturile caruselului */
+.thumbnail-carousel img {
+    width: 90px;             /* Lățime fixă pentru miniaturi */
+    height: 70px;            /* Înălțime fixă pentru miniaturi */
+    object-fit: cover;       /* Asigură că imaginea miniaturii se potrivește perfect */
+    cursor: pointer;        /* Arată pointer la hover */
+    margin-right: 10px;      /* Spațiu între miniaturi */
+    border-radius: 8px;      /* Colțuri rotunjite pentru miniaturi */
+    transition: transform 0.3s ease; /* Efect la hover */
+}
+
+.thumbnail-carousel img:hover {
+    transform: scale(1.1);   /* Mărește miniatura la hover */
+}
+
+/* Caruselul miniaturilor (derulare orizontală) */
+.thumbnail-carousel .carousel-inner {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;        /* Permite derularea orizontală */
+    padding: 10px 0;         /* Padding pentru caruselul miniaturilor */
+}
+
+.thumbnail-carousel .carousel-item {
+    flex-shrink: 0;          /* Evită micșorarea miniaturilor */
+}
+
+
+.car-details h1 {
+    font-size: 2.5em;         /* Mărimea textului pentru titlu */
+    font-weight: bold;        /* Textul să fie îngroșat */
+    color: #333;              /* Culoare închisă pentru titlu */
+    margin-bottom: 10px;      /* Spațiu sub titlu */
+}
+
+.price {
+    font-size: 1.8em;         /* Mărimea textului pentru preț */
+    font-weight: bold;        /* Textul să fie îngroșat */
+    color: #e94e77;           /* Culoare de accent pentru preț */
+    margin-bottom: 10px;      /* Spațiu sub preț */
+}
+
+.status {
+    font-size: 1.2em;         /* Mărimea textului pentru status */
+    color: #28a745;           /* Culoare verde pentru status disponibil */
+    font-weight: bold;        /* Text îngroșat pentru status */
+    margin-bottom: 10px;      /* Spațiu sub status */
+}
+
+.financing {
+    font-size: 1.2em;         /* Mărimea textului pentru opțiunea de finanțare */
+
+    font-weight: bold;        /* Text îngroșat pentru opțiunea de finanțare */
+    margin-bottom: 20px;      /* Spațiu sub opțiunea de finanțare */
+}
+
+/* Secțiunea pentru opțiunea de rate */
+.car-details h3 {
+    font-size: 1.6em;         /* Mărimea textului pentru întrebarea "Vrei în rate?" */
+    font-weight: bold;        /* Text îngroșat pentru întrebare */
+    color: #333;              /* Culoare închisă pentru întrebare */
+    margin-bottom: 15px;      /* Spațiu sub întrebare */
+}
+
+/* Caseta de aplicare pentru rate */
+.rate-box {
+    display: flex;
+    align-items: center;      /* Aliniază elementele pe verticală */
+    margin-bottom: 20px;      /* Spațiu sub caseta de rate */
+}
+
+.rate-box span {
+    font-size: 34px;         /* Mărimea textului pentru span */
+    margin-right: 20px;       /* Spațiu între text și buton */
+}
+
+.apply-btn-white {
+    background-color: #fff;   /* Fundal alb pentru buton */
+    border: 2px solid #e94e77; /* Bordură de culoare roz pentru buton */
+    color: #e94e77;            /* Culoare textului butonului */
+    padding: 8px 20px;        /* Padding pentru buton */
+    font-size: 1.2em;          /* Mărimea textului din buton */
+    border-radius: 25px;       /* Colțuri rotunjite pentru buton */
+    cursor: pointer;          /* Cursor pointer la hover */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Tranziție pentru hover */
+    
+}
+
+.apply-btn-white:hover {
+    background-color: #e94e77; /* Culoare de fundal la hover */
+    color: white;              /* Culoare text alb la hover */
+}
+
+/* Lista de informații pentru rate */
+.car-details ul {
+    list-style-type: none;    /* Elimină punctele din fața fiecărui element */
+    padding: 0;               /* Elimină padding-ul implicit */
+}
+
+.car-details ul li {
+    font-size: 1.2em;         /* Mărimea textului pentru elemente de listă */
+    color: #333;              /* Culoare textului elementelor de listă */
+    margin-bottom: 10px;      /* Spațiu între elementele listei */
+}
+
+.car-details ul li:before {
+   
+    margin-right: 10px;       /* Spațiu între emoji și text */
+    color: #28a745;           /* Culoare verde pentru emoji */
+}
+
+/* Secțiunea Dorești mai multe informații? */
+.info-section {
+    margin-top: 30px;         /* Spațiu deasupra secțiunii */
+}
+
+.info-section h3 {
+    font-size: 1.6em;         /* Mărimea textului pentru întrebarea "Dorești mai multe informații?" */
+    font-weight: bold;        /* Text îngroșat pentru întrebare */
+    color: #333;              /* Culoare închisă pentru întrebare */
+    margin-bottom: 15px;      /* Spațiu sub întrebare */
+}
+
+/* Butoanele de contact */
+.contact-buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    text-align: center;
+    background-color: #333; /* Culoare de accent pentru butoane */
+    color: white;
+    border-radius: 25px;       /* Colțuri rotunjite pentru butoane */
+    text-decoration: none;     /* Fără subliniere pe link */
+    transition: background-color 0.3s ease;
+}
+
+.contact-buttons a:hover {
+    background-color: #d13b5c; /* Culoare mai închisă la hover */
+}
+
+/* Butoanele de contact pentru telefon și WhatsApp */
+.call-btn {
+    background-color: gray; /* Culoare verde pentru butonul de apel */
+    border: 2px solid gray; /* Bordură verde pentru buton */
+}
+
+.whatsapp-btn {
+    background-color: gray; /* Culoare verde WhatsApp pentru buton */
+    border: 2px solid gray;  /* Bordură verde pentru buton */
+}
+
+.call-btn:hover {
+    background-color: #218838;  /* Culoare mai închisă pentru butonul de apel */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;  /* Culoare mai închisă pentru butonul WhatsApp */
+}
+
+/* Stilizare generală pentru detalii tehnice */
+.technical-details {
+    background-color: #f8f8f8; /* Crem deschis pentru fundal */
+    padding: 20px;
+    border-radius: 8px; /* Colțuri rotunjite */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Umbra subtilă */
+    max-width: 900px; /* Lățime maximă pe desktop */
+    margin: 20px auto; /* Centrat pe ecran */
+    font-family: Arial, sans-serif; /* Font simplu și lizibil */
+}
+
+.technical-details h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333; /* Text negru pentru titlu */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Rândurile de detalii */
+.details-row, .details-row-second {
+    display: flex;
+    flex-wrap: wrap; /* Permite elementelor să se înfășoare pe mai multe linii */
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.detail {
+    background-color: #fff; /* Alb pentru fundalul detaliilor */
+    padding: 12px;
+    border-radius: 5px; /* Colțuri rotunjite pentru cardurile de detalii */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Umbra discretă */
+    flex: 1 1 30%; /* Flexibilitate pentru a se adapta ecranelor mari */
+    font-size: 1em;
+    color: #333; /* Textul principal într-o nuanță închisă */
+    display: flex;
+    align-items: center; /* Aliniere pe verticală pentru iconițe și text */
+}
+
+.detail i {
+    margin-right: 10px;
+    font-size: 1.2em; /* Pictogramele mai mari pentru vizibilitate */
+    color: #555; /* Pictograme gri deschis */
+}
+
+/* Media Query pentru dispozitive mobile */
+@media (max-width: 768px) {
+    /* Secțiunea detalii */
+    .technical-details {
+        width: 95%; /* Lățimea va fi mai mare pe dispozitive mici */
+        padding: 15px;
+    }
+
+    .technical-details h2 {
+        font-size: 1.6em;
+    }
+
+    .details-row, .details-row-second {
+        flex-direction: column; /* Dispunerea în coloană pe mobil */
+        align-items: flex-start;
+    }
+
+    .detail {
+        flex: 1 1 100%; /* Fiecare detaliu va ocupa întreaga lățime pe mobil */
+        padding: 10px;
+        font-size: 0.9em; /* Font mai mic pe mobil */
+    }
+}
+
+
+
+/* Secțiunea cu 3 cartonașe */
+.cards-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    margin-top: 60px;
+}
+
+/* Cartonașe */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%; /* Fiecare cartonaș să ocupe 30% din lățimea secțiunii */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card i {
+    font-size: 2em;
+    color: #e94e77;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Efecte la hover pentru fiecare cartonaș */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Secțiunea Descrierea Mașinii */
+.car-description-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 30px auto;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Titlul descrierii */
+.car-description-section h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Textul descrierii */
+.car-description-section p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.image-section {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Container pentru imagini */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+
+/* Stiluri pentru imagini - Mobil */
+/* Stiluri pentru imagini - Mobil */
+@media (max-width: 768px) {
+
+    /* Secțiunea de imagini */
+    .image-section {
+        padding: 20px 0; /* Reducem padding-ul pe mobil */
+    }
+
+    /* Container pentru imagini */
+    .image-container {
+        display: block; /* Împingem imaginile pe verticală */
+        text-align: center;
+    }
+
+    /* Imaginile */
+    .image-item {
+        width: 100%; /* Imaginile vor ocupa întreaga lățime a containerului */
+        height: auto; /* Ajustăm înălțimea pentru a păstra proporțiile */
+        object-fit: cover; /* Acoperim spațiul fără a distorsiona imaginea */
+        margin-bottom: 15px; /* Spațiu între imagini */
+        border-radius: 8px; /* Colțuri rotunjite pentru imagini */
+    }
+
+    #first-image {
+        width: 350px; /* Lățimea imaginii fixă (100px) */
+        height: 350px; /* Înălțimea imaginii fixă (100px) */
+        object-fit: contain; /* Asigurăm că întreaga imagine este vizibilă */
+        margin: 0 auto 15px; /* Aliniem centrul imaginii și adăugăm spațiu jos */
+    }
+    /* Stilizare pentru a doua imagine */
+#second-image {
+    width: 350px; /* Lățimea imaginii fixă (100px) */
+    height: 350px; /* Înălțimea imaginii fixă (100px) */
+    object-fit: contain; /* Asigurăm că întreaga imagine este vizibilă */
+    margin: 0 auto 15px; /* Aliniem centrul imaginii și adăugăm spațiu jos */
+}
+
+}
+
+
+
+/* Stiluri pentru fiecare imagine */
+.image-item {
+    width: 300px;  /* Lățimea pentru imagini */
+    height: 400px;  /* Înălțimea fixă pentru ambele imagini */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    object-fit: cover;  /* Asigură că prima imagine va umple containerul complet */
+}
+
+/* Pentru prima imagine (care este dreptunghiulară), se ajustează doar lățimea */
+.image-item:first-child {
+    height: 400px;  /* Să aibă aceeași înălțime ca a doua imagine */
+    width: auto;    /* Permite lățimii să fie ajustată în funcție de raportul de aspect */
+}
+
+/* Pentru a doua imagine (care se vede corect în pătrat), folosim contain */
+.image-item:last-child {
+    object-fit: contain; /* Asigură că întreaga imagine este vizibilă */
+}
+
+/* Efect de hover pentru imagini */
+.image-item:hover {
+    transform: scale(1.05);
+}
+/* Stiluri pentru telefoane (maxim 768px lățime) */
+@media (max-width: 768px) {
+
+    /* Caruselul principal */
+    .car-carousel {
+        height: 350px;  /* Mărim caruselul pentru telefoane */
+        max-width: 100%; /* Asigurăm că caruselul se poate adapta la lățimea ecranului */
+    }
+
+    .car-carousel img {
+        height: 100%;  /* Imaginea se va adapta perfect la container */
+    }
+
+    /* Detaliile mașinii */
+    .car-details {
+        margin-left: 0; /* Eliminăm spațiul din stânga */
+        padding: 15px; /* Reducem padding-ul */
+    }
+
+    .price {
+        font-size: 1.5em;  /* Micșorăm dimensiunea prețului pe telefoane */
+    }
+
+    /* Secțiunea de informații */
+    .info-section {
+        margin-top: 20px;
+    }
+
+    .contact-buttons a {
+        font-size: 1.1em;  /* Micșorăm fontul butoanelor */
+        padding: 8px 15px; /* Ajustăm dimensiunea butoanelor */
+    }
+
+    .thumbnail-carousel img {
+        width: 70px;  /* Miniaturile devin mai mici pe mobil */
+        height: 50px;
+    }
+
+
+    .details-row {
+        grid-template-columns: 1fr 1fr; /* 2 coloane pentru detalii */
+        gap: 10px;
+    }
+
+    .details-row-second {
+        grid-template-columns: 1fr; /* O singură coloană pentru al doilea rând de detalii */
+        gap: 10px;
+    }
+
+    /* Cartonașele */
+    .cards-section {
+        flex-direction: column; /* Așezăm cartonașele pe verticală pe mobil */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* Reducem lățimea cartonașelor */
+        margin-bottom: 20px; /* Adăugăm puțin spațiu între cartonașe */
+    }
+
+    /* Descrierea mașinii */
+    .car-description-section {
+        width: 90%; /* Mai mult spațiu pentru descriere pe mobil */
+    }
+
+    .car-description-section p {
+        font-size: 1em;  /* Micșorăm textul pentru o mai bună lizibilitate */
+    }
+
+    /* Secțiunea pentru imagini */
+    .image-section {
+        padding: 20px 0;
+    }
+
+    .image-container {
+        flex-direction: column; /* Aranjăm imaginile pe verticală pe telefoane */
+        gap: 15px;
+    }
+
+    .image-item {
+        width: 100%; /* Lățime completă pentru imagini pe mobil */
+        height: auto; /* Permitem ca înălțimea să fie ajustată automat */
+    }
+
+    /* Alte ajustări pentru mobil */
+    .apply-btn-white {
+        font-size: 1em;  /* Reducem dimensiunea butonului */
+        padding: 10px 18px; /* Ajustăm padding-ul */
+    }
+
+    .rate-box {
+        flex-direction: column;  /* Aranjăm elementele pe verticală */
+    }
+}
+
+
+
+
+/* Stil pentru butonul principal */
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e7222e; /* Culoarea aleasă */
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: scale(1.1); /* Mărim butonul la hover */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.4); /* Efect de umbră la hover */
+}
+
+/* Stil pentru opțiunile care vor apărea */
+.contact-options {
+    display: none; /* Ascunde opțiunile inițial */
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Efect de umbră subtile */
+    border-radius: 8px;
+    padding: 10px;
+    width: 220px;
+    z-index: 999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px); /* Împinge opțiunile în sus la început */
+}
+
+.contact-options.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0); /* Permite opțiunilor să se miște în sus */
+}
+
+/* Stil pentru fiecare opțiune */
+.option-button {
+    display: block;
+    padding: 10px;
+    margin: 8px 0;
+    background-color: #e7222e; /* Culoare similară cu butonul principal */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 14px;
+}
+
+.option-button:hover {
+    background-color: #d61d2c; /* Culoare mai închisă la hover */
+}
+
+.option-button:active {
+    transform: scale(0.98); /* Micșorează butonul la apăsare */
+}
+
+/* Efect pentru animarea butonului principal și opțiunilor */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
